@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <title>Fruit Rotten Detector</title>
+</head>
+<body>
+    <div class="container">
+        <div class="imageSection">
+            <img id="imagePreview" src="" alt="">
+            <form action="/edgesnew" method="POST" id="form" enctype="multipart/form-data"  >
+                <input name="picture" type="file" id="file" accept="image/*" style="display:none">
+                <label class="boton" for="file">Elige un archivo</label>
+                <input id="auxiliar"type="submit" style="display:none">
+            </form>
+        </div>
+        <div class="optionSection">
+            <div class="classificationMessage" id="classificationMessage">
+                Clasificacion
+            </div>
+            <div class="fruitclassification">
+                <div class="menutitle">
+                    Fruta
+                </div> 
+                <canvas id="fruitCanvas">
+                    
+                </canvas>
+            </div>
+            <div class="rottenclassification">
+                <div class="menutitle">
+                    Estado
+                </div>
+                <canvas id="stateCanvas">
+
+                </canvas>
+            </div>
+            <div class="classificationMessage">
+                Por: Juan Roa, Alejandro Aponte
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+    <script src="/static/imageLoader.js"></script>
+    <script src="/static/chart.js"></script>
+</body>
+</html>
